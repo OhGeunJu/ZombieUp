@@ -24,7 +24,7 @@ public class PlayerFall : MonoBehaviour
     {
         HandleFalling();
 
-        // IsGround´Â ÄÚµå ³»ºÎ ·ÎÁ÷¿ë
+        // IsGroundëŠ” ì½”ë“œ ë‚´ë¶€ ë¡œì§ìš©
         animator.SetBool("IsGround", controller.isGrounded);
     }
 
@@ -62,12 +62,12 @@ public class PlayerFall : MonoBehaviour
 
                 if (totalFall >= fallThreshold && standUpHandler != null)
                 {
-                    standUpHandler.BeginStandUp(); // ½ºÅÄµå¾÷ ½ÇÇà À§ÀÓ
+                    standUpHandler.BeginStandUp(); // ìŠ¤íƒ ë“œì—… ì‹¤í–‰ ìœ„ì„
                 }
             }
         }
 
-        // Falling ¾Ö´Ï¸ŞÀÌ¼Ç »óÅÂ¿¡¼­ Æ®¸®°Å ÃÊ±âÈ­
+        // Falling ì• ë‹ˆë©”ì´ì…˜ ìƒíƒœì—ì„œ íŠ¸ë¦¬ê±° ì´ˆê¸°í™”
         AnimatorStateInfo state = animator.GetCurrentAnimatorStateInfo(0);
         if (state.IsName("Falling"))
         {

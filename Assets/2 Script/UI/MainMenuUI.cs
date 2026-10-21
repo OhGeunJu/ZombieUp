@@ -39,7 +39,7 @@ public class MainMenuUI : MonoBehaviour
 
     public void OnOpenSettings()
     {
-        Debug.Log("¼³Á¤ È­¸é ¿­±â (¹Ì±¸Çö)");
+        Debug.Log("ì„¤ì • í™”ë©´ ì—´ê¸° (ë¯¸êµ¬í˜„)");
     }
 
     public void OnQuitGame()

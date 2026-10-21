@@ -12,7 +12,7 @@ public class GameTimer : MonoBehaviour
 
     void Awake()
     {
-        PlayerPrefs.DeleteKey("CurrentTime"); // °ÔÀÓ ½ÃÀÛ ½Ã ÃÊ±âÈ­
+        PlayerPrefs.DeleteKey("CurrentTime"); // ê²Œì„ ì‹œì‘ ì‹œ ì´ˆê¸°í™”
     }
     void Start()
     {

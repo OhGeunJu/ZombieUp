@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         Timer = GetComponent<GameTimer>();
-        SceneManager.sceneLoaded += OnSceneLoaded; // ¾À ·Îµå ½Ã ÀÚµ¿ ¿¬°á
+        SceneManager.sceneLoaded += OnSceneLoaded; // ì”¬ ë¡œë“œ ì‹œ ìë™ ì—°ê²°
     }
 
     void Update()
@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // Å¸ÀÌ¸Ó UIµµ Àç¿¬°á
+        // íƒ€ì´ë¨¸ UIë„ ì¬ì—°ê²°
         if (Timer != null)
         {
             GameObject timerObj = GameObject.Find("Timer");
@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
                 timerObj.SetActive(true);
             }
 
-            Timer.ResetTimer(); // ½Ã°£Àº À¯ÁöÇÑ Ã¤ ´Ù½Ã ½ÇÇà
+            Timer.ResetTimer(); // ì‹œê°„ì€ ìœ ì§€í•œ ì±„ ë‹¤ì‹œ ì‹¤í–‰
         }
     }
 

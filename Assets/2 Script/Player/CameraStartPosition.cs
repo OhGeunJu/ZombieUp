@@ -9,11 +9,11 @@ public class CameraStartPosition : MonoBehaviour
 
     void Start()
     {
-        // Ä³¸¯ÅÍ°¡ ¹Ù¶óº¸´Â ¹æÇâ(¿ùµå ¹æÇâ)À» ±âÁØÀ¸·Î XÃà °ªÀ» ¼³Á¤
+        // ìºë¦­í„°ê°€ ë°”ë¼ë³´ëŠ” ë°©í–¥(ì›”ë“œ ë°©í–¥)ì„ ê¸°ì¤€ìœ¼ë¡œ Xì¶• ê°’ì„ ì„¤ì •
         float angleY = player.eulerAngles.y;
         freeLookCamera.m_XAxis.Value = angleY;
 
-        // Ä«¸Ş¶ó À§¿¡¼­ ³»·Á´Ùº¸´Â °¢µµ ¼³Á¤ (0~1 ¹üÀ§)
+        // ì¹´ë©”ë¼ ìœ„ì—ì„œ ë‚´ë ¤ë‹¤ë³´ëŠ” ê°ë„ ì„¤ì • (0~1 ë²”ìœ„)
         freeLookCamera.m_YAxis.Value = 0.6f;
     }
 }

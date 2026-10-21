@@ -11,7 +11,7 @@ public class SlowMotion : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             Time.timeScale = slowTimeScale;
-            Time.fixedDeltaTime = 0.02f * Time.timeScale; // ¹°¸® ¿¬»ê º¸Á¤
+            Time.fixedDeltaTime = 0.02f * Time.timeScale; // ë¬¼ë¦¬ ì—°ì‚° ë³´ì •
         }
         else if (Input.GetMouseButtonUp(1))
         {

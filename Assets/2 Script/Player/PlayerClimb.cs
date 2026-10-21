@@ -5,7 +5,7 @@ public class PlayerClimb : MonoBehaviour
 {
     [SerializeField] private float climbCheckDistance = 1.0f;
     [SerializeField] private float maxClimbHeight = 2.3f;
-    [SerializeField] private Transform climbLimit; // ±âÁØ¼± Æ®·£½ºÆû (³ôÀº Àå¾Ö¹°ÀÎÁö ÆÇ´Ü ±âÁØ)
+    [SerializeField] private Transform climbLimit; // ê¸°ì¤€ì„  íŠ¸ëœìŠ¤í¼ (ë†’ì€ ì¥ì• ë¬¼ì¸ì§€ íŒë‹¨ ê¸°ì¤€)
     public LayerMask climbableLayer;
 
     private CharacterController controller;
@@ -50,21 +50,21 @@ public class PlayerClimb : MonoBehaviour
                 float ledgeY = hit.collider.bounds.max.y;
                 float characterY = controller.bounds.min.y;
 
-                // ±âÁØ¼±º¸´Ù ³·Àº Àå¾Ö¹°Àº Á¡ÇÁ·Î Ã³¸® (µî¹İ ±İÁö)
+                // ê¸°ì¤€ì„ ë³´ë‹¤ ë‚®ì€ ì¥ì• ë¬¼ì€ ì í”„ë¡œ ì²˜ë¦¬ (ë“±ë°˜ ê¸ˆì§€)
                 if (climbLimit != null && ledgeY < climbLimit.position.y)
                 {
-                    Debug.Log("±âÁØ¼±º¸´Ù ³·Àº Àå¾Ö¹°ÀÌ¹Ç·Î µî¹İÇÏÁö ¾ÊÀ½ ¡æ Á¡ÇÁ·Î Ã³¸®");
+                    Debug.Log("ê¸°ì¤€ì„ ë³´ë‹¤ ë‚®ì€ ì¥ì• ë¬¼ì´ë¯€ë¡œ ë“±ë°˜í•˜ì§€ ì•ŠìŒ â†’ ì í”„ë¡œ ì²˜ë¦¬");
                     return;
                 }
 
                 if ((ledgeY - characterY) <= maxClimbHeight)
                 {
-                    Debug.Log("µî¹İ ½ÃÀÛ");
+                    Debug.Log("ë“±ë°˜ ì‹œì‘");
                     StartClimb(hit);
                 }
                 else
                 {
-                    Debug.Log("³Ê¹« ³ô¾Æ¼­ µî¹İ ºÒ°¡");
+                    Debug.Log("ë„ˆë¬´ ë†’ì•„ì„œ ë“±ë°˜ ë¶ˆê°€");
                 }
             }
         }

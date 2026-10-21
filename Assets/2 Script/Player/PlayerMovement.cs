@@ -111,7 +111,7 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("Walking", isWalking && !isRunning);
         animator.SetBool("Running", isRunning);
 
-        // RunJump »óÅÂ¿¡¼­ ÂøÁöÇÏ°í ÀÌµ¿ÇÏ¸é ¾Ö´Ï¸ŞÀÌ¼Ç ÀüÀÌ
+        // RunJump ìƒíƒœì—ì„œ ì°©ì§€í•˜ê³  ì´ë™í•˜ë©´ ì• ë‹ˆë©”ì´ì…˜ ì „ì´
         AnimatorStateInfo state = animator.GetCurrentAnimatorStateInfo(0);
         if (state.IsName("RunJump") && controller.isGrounded && isInputting)
         {
@@ -172,7 +172,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (controller.isGrounded || IsOnSlope()) return true;
 
-        // Áö¸é°ú °¡±î¿ì¸é Á¡ÇÁ Çã¿ë
+        // ì§€ë©´ê³¼ ê°€ê¹Œìš°ë©´ ì í”„ í—ˆìš©
         if (Physics.Raycast(transform.position, Vector3.down, 0.3f)) return true;
 
         return false;
@@ -180,7 +180,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void LaunchByJumpPad(float force)
     {
-        // ±âÁ¸ ¼öÁ÷ ¼Óµµ Á¦°Å ÈÄ ¹ß»ç
+        // ê¸°ì¡´ ìˆ˜ì§ ì†ë„ ì œê±° í›„ ë°œì‚¬
         yVelocity = force;
     }
 }

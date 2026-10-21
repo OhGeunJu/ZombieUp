@@ -8,14 +8,14 @@ public class FinishEvent : MonoBehaviour
     public GameObject animationPlayer;
     public GameObject timerTextObject;
 
-    private bool hasTriggered = false; // Æ®¸®°Å Áßº¹ ¹æÁö¿ë
+    private bool hasTriggered = false; // íŠ¸ë¦¬ê±° ì¤‘ë³µ ë°©ì§€ìš©
 
     private void OnTriggerEnter(Collider other)
     {
-        // ÀÌ¹Ì ½ÇÇàµÆ°Å³ª, ÇÃ·¹ÀÌ¾î°¡ ¾Æ´Ñ °æ¿ì ¹«½Ã
+        // ì´ë¯¸ ì‹¤í–‰ëê±°ë‚˜, í”Œë ˆì´ì–´ê°€ ì•„ë‹Œ ê²½ìš° ë¬´ì‹œ
         if (hasTriggered || !other.CompareTag("Player")) return;
 
-        hasTriggered = true; // ´õ ÀÌ»ó ½ÇÇàµÇÁö ¾Êµµ·Ï ÇÃ·¡±× ¼³Á¤
+        hasTriggered = true; // ë” ì´ìƒ ì‹¤í–‰ë˜ì§€ ì•Šë„ë¡ í”Œë˜ê·¸ ì„¤ì •
 
         if (timelineDirector != null && timelineDirector.state != PlayState.Playing)
         {

@@ -5,7 +5,7 @@ public class CameraAltFreeLook : MonoBehaviour
 {
     public CinemachineFreeLook freeLook;
     public Transform player;
-    public float restoreSpeed = 5f; // º¹±Í ¼Óµµ
+    public float restoreSpeed = 5f; // ë³µê·€ ì†ë„
 
     private bool wasAltHeld = false;
     private float originalCameraX;
@@ -18,7 +18,7 @@ public class CameraAltFreeLook : MonoBehaviour
 
         if (freeLook == null) return;
 
-        // ALT ´©¸¥ ¼ø°£: ÇöÀç ½ÃÁ¡ ÀúÀå
+        // ALT ëˆ„ë¥¸ ìˆœê°„: í˜„ì¬ ì‹œì  ì €ì¥
         if (isAltHeld && !wasAltHeld)
         {
             originalCameraX = freeLook.m_XAxis.Value;
@@ -26,20 +26,20 @@ public class CameraAltFreeLook : MonoBehaviour
             isRestoring = false;
         }
 
-        // ALT ¶¾ ¼ø°£: º¹±Í ½ÃÀÛ
+        // ALT ë—€ ìˆœê°„: ë³µê·€ ì‹œì‘
         if (!isAltHeld && wasAltHeld)
         {
             isRestoring = true;
         }
 
-        // º¹±Í Ã³¸®
+        // ë³µê·€ ì²˜ë¦¬
         if (isRestoring)
         {
-            // Lerp·Î ºÎµå·´°Ô ½ÃÁ¡ º¹±¸
+            // Lerpë¡œ ë¶€ë“œëŸ½ê²Œ ì‹œì  ë³µêµ¬
             freeLook.m_XAxis.Value = Mathf.LerpAngle(freeLook.m_XAxis.Value, originalCameraX, Time.deltaTime * restoreSpeed);
             freeLook.m_YAxis.Value = Mathf.Lerp(freeLook.m_YAxis.Value, originalCameraY, Time.deltaTime * restoreSpeed);
 
-            // °ÅÀÇ º¹±ÍÇßÀ¸¸é Á¾·á
+            // ê±°ì˜ ë³µê·€í–ˆìœ¼ë©´ ì¢…ë£Œ
             if (Mathf.Abs(freeLook.m_XAxis.Value - originalCameraX) < 0.001f &&
                 Mathf.Abs(freeLook.m_YAxis.Value - originalCameraY) < 0.001f)
             {
