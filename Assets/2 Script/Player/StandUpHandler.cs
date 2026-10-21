@@ -36,7 +36,7 @@ public class StandUpHandler : MonoBehaviour
         AnimatorStateInfo state = animator.GetCurrentAnimatorStateInfo(0);
         bool isMoving = Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0;
 
-        if (state.IsName("StandUp") && isMoving) // ¿òÁ÷ÀÌ¸é ½ºÅµ
+        if (state.IsName("StandUp") && isMoving) // ì›€ì§ì´ë©´ ìŠ¤í‚µ
         {
             animator.SetTrigger("InterruptStandUp");
             EndStandUp();

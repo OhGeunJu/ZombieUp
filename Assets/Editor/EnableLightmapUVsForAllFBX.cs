@@ -27,6 +27,6 @@ public class EnableLightmapUVsForAllFBX : MonoBehaviour
             }
         }
 
-        Debug.Log($" Lightmap UVs È°¼ºÈ­ ¿Ï·á. ÃÑ Àû¿ëµÈ ¸ğµ¨ ¼ö: {count}");
+        Debug.Log($" Lightmap UVs í™œì„±í™” ì™„ë£Œ. ì´ ì ìš©ëœ ëª¨ë¸ ìˆ˜: {count}");
     }
 }

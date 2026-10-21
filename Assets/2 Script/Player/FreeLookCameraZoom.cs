@@ -14,15 +14,15 @@ public class FreeLookCameraZoom : MonoBehaviour
     public Transform player;
 
     public RigSettings[] defaultRigs = new RigSettings[3];
-    public float zoomOutRadius = 7.5f;   // °È±â ½Ã ÁÜ¾Æ¿ô
-    public float runZoomOutRadius = 9f;  // ´Ş¸®±â ½Ã ´õ ¸Ö¾îÁü
+    public float zoomOutRadius = 7.5f;   // ê±·ê¸° ì‹œ ì¤Œì•„ì›ƒ
+    public float runZoomOutRadius = 9f;  // ë‹¬ë¦¬ê¸° ì‹œ ë” ë©€ì–´ì§
     public float zoomSpeed = 2f;
 
     void Start()
     {
         if (freeLook == null) return;
 
-        // ÃÊ±â°ª ÀúÀå
+        // ì´ˆê¸°ê°’ ì €ì¥
         for (int i = 0; i < 3; i++)
         {
             defaultRigs[i].height = freeLook.m_Orbits[i].m_Height;
@@ -34,18 +34,18 @@ public class FreeLookCameraZoom : MonoBehaviour
     {
         if (player == null || freeLook == null) return;
 
-        // ¹æÇâÅ° ÀÔ·Â È®ÀÎ (WASD)
+        // ë°©í–¥í‚¤ ì…ë ¥ í™•ì¸ (WASD)
         bool h = Input.GetAxisRaw("Horizontal") != 0f;
         bool v = Input.GetAxisRaw("Vertical") != 0f;
         bool isMoving = h || v;
 
-        // Shift Å°¸¦ ´©¸£°í ÀÖ´ÂÁö È®ÀÎ
+        // Shift í‚¤ë¥¼ ëˆ„ë¥´ê³  ìˆëŠ”ì§€ í™•ì¸
         bool isRunning = isMoving && Input.GetKey(KeyCode.LeftShift);
 
-        // ¸ñÇ¥ ¹İÁö¸§ °áÁ¤
+        // ëª©í‘œ ë°˜ì§€ë¦„ ê²°ì •
         float targetRadius = isRunning ? runZoomOutRadius :
                               isMoving ? zoomOutRadius :
-                              0f; // ¡æ ¾Æ·¡¿¡¼­ defaultRadius·Î ´ëÃ¼µÊ
+                              0f; // â†’ ì•„ë˜ì—ì„œ defaultRadiusë¡œ ëŒ€ì²´ë¨
 
         for (int i = 0; i < 3; i++)
         {

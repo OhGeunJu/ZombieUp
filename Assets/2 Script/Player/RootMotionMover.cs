@@ -8,7 +8,7 @@ public class RootMotionMover : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
-        rootTransform = transform.root; // ºÎ¸ğ ¿ÀºêÁ§Æ®(Player)
+        rootTransform = transform.root; // ë¶€ëª¨ ì˜¤ë¸Œì íŠ¸(Player)
     }
 
     void OnAnimatorMove()
